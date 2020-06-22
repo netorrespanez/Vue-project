@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <MapItem />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MapItem from "./components/MapItem.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    MapItem
   }
 };
 </script>
 
 <style lang="scss">
+@import "./assets/scss/colorVariables.scss";
+
+body {
+  margin: 0;
+  background-color: $monitos-light-grey;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+  max-width: 1920px;
+  max-height: 1080px;
 }
 </style>

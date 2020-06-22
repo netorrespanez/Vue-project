@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" v-on:click="$emit('selected', card.id)">
+  <div class="card-container" v-on:click="$emit('selected', card.recordid)">
     <div class="text-section">
       <p>{{ card.name }}</p>
       <p>{{ card.address }}</p>

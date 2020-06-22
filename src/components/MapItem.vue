@@ -86,11 +86,16 @@ export default {
       this.cards = newMarkers;
 
       newMarkers.map(marker => {
+        //Create info associated to the marker
         let location = { lat: marker.position.lat, lng: marker.position.lng };
+
+        // Create marker element from Google API
         const markerElement = new this.google.maps.Marker({
           position: location,
           map: this.map
         });
+
+        // Set markers to the data
         this.markers.push(markerElement);
 
         markerElement.addListener(`click`, () =>
@@ -130,9 +135,17 @@ export default {
         content: instance.$el
       });
       new_infowindow.open(this.map, item);
+
+      this.getInfo(marker.recordid);
     },
+    /**
+     * Select card item associated to the selected marker
+     */
     getInfo(recordid) {
-      return recordid;
+      let selectedMarkerInfo = this.cards.findIndex(
+        element => element.recordid === recordid
+      );
+      return selectedMarkerInfo;
     }
   }
 };

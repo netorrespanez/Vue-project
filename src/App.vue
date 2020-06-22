@@ -39,7 +39,6 @@ body {
 
 #app {
   position: absolute;
-  //position: relative;
   max-width: 1920px;
   max-height: 1080px;
 }

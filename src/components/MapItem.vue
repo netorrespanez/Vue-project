@@ -136,12 +136,23 @@ export default {
       });
       new_infowindow.open(this.map, item);
 
-      this.getInfo(marker.recordid);
+      //this.getInfo(marker.recordid);
     },
     /**
      * Select card item associated to the selected marker
      */
     getInfo(recordid) {
+      let selectedMarker = this.cards.find(
+        element => element.recordid === recordid
+      );
+
+      const markerElement = new this.google.maps.Marker({
+        position: selectedMarker.position,
+        map: this.map
+      });
+
+      this.markerClickHandler(markerElement, selectedMarker);
+
       let selectedMarkerInfo = this.cards.findIndex(
         element => element.recordid === recordid
       );

@@ -145,8 +145,6 @@ export default {
 .google-map {
   position: relative;
   min-height: 440px;
-  //width: 900px;
-  //margin: 51.06px 50px 51.06px 50px;
 }
 
 .list-wrapper {
@@ -155,9 +153,6 @@ export default {
   padding: 50px;
 
   background-color: #ffffff;
-  border: 1px solid red;
-  //width: 1000px;
-  //padding: 51.06px 50px 51.06 50px;
 }
 
 .map-info {

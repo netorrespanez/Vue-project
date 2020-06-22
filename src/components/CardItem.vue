@@ -34,7 +34,6 @@ export default {
   display: flex;
   height: 160px;
   margin: 24px 0px;
-  //width: 905px;
 
   font-family: $font-card-info;
   font-size: 17px;

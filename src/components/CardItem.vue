@@ -1,5 +1,10 @@
 <template>
-  <div class="card-container" v-on:click="$emit('selected', card.recordid)">
+  <div
+    class="card-container"
+    v-on:click="selectItem"
+    v-on:focus="switchState"
+    v-bind:class="{ selected: selected }"
+  >
     <div class="text-section">
       <p>{{ card.name }}</p>
       <p>{{ card.address }}</p>
@@ -21,6 +26,20 @@ export default {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      selected: false
+    };
+  },
+  methods: {
+    selectItem: function() {
+      this.selected = true;
+      this.$emit("selected", this.card.recordid);
+    },
+    switchState: function() {
+      this.selected = false;
+    }
   }
 };
 </script>
@@ -40,6 +59,11 @@ export default {
 
   border: 1px solid $monitos-card-border;
   background-color: #ffffff;
+}
+
+.selected {
+  border: 1px solid brown;
+  background-color: $monitos-card-background;
 }
 
 .icon-section {
